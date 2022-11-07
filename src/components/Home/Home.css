@@ -1,0 +1,5 @@
+.banner-text:after{
+position: absolute;
+color: black;
+content: "hello every one";
+}

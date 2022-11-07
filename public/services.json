@@ -1,0 +1,50 @@
+[
+    {
+        "name":"Chicken Curry",
+        "picture":"https://i.ibb.co/fCn28kM/chicken-curry.jpg",
+        "description":"One of the most royal delicacies that you can enjoy on any occasion or festival, Chicken Biryani is the epitome of a one-pot meal. Well, no one can resist the sight of the aromatic and delicious Chicken Biryani recipe. If you are also craving that, then you need not go anywhere as we have got this super-easy biryani recipe for you. So, what are you waiting for? Do try this delicious Chicken Biryani recipe and enjoy it with your loved ones.",
+        "price":"200",
+        "delivery":"20",
+        "rating":"4.5"
+    },
+    {
+        "name":"Milk Egg Pudding",
+        "picture":"https://i.ibb.co/N98YZn7/milk-egg-pudding.jpg",
+        "description":"Egg pudding recipe is such a delighting dish made up of eggs and milk. This drool worthy dish is loved by kids.The non-vegetarian Indian dessert is famous for its unique taste and healthy goodness. You can make it in a pressure cooker with a few easy steps. Caramelizing sugar is important while making this. You can add vanilla essence to add an extra flavor.The egg pudding is best served cold. This easy dessert can be quickly made for kids' parties and other festive occasions. Surprise everyone and get loads of compliments by making this easy egg pudding. Learn how to make it in the steps below.",
+        "price":"150",
+        "delivery":"20",
+        "rating":"4"
+    },
+    {
+        "name":"Fish Curry",
+        "picture":"https://i.ibb.co/rHwc7H7/fish-curry.jpg",
+        "description":"Eating fish is an important source of omega-3 fatty acids. These essential nutrients keep our heart and brain healthy. Two omega-3 fatty acids found in fish are EPA (eicosapentaenoic acid) and DHA (docosahexaenoic acid). Our bodies don't produce omega-3 fatty acids so we must get them through the food we eat. Omega-3 fatty acids are found in every kind of fish, but are especially high in fatty fish. Some good choices are salmon, trout, sardines, herring, canned mackerel, canned light tuna, and oysters.",
+        "price":"120",
+        "delivery":"20",
+        "rating":"5"
+    },
+    {
+        "name":"Chicken Biriany",
+        "picture":"https://i.ibb.co/DQYVfpK/chicken-biriani.jpg",
+        "description":"Chicken Biryani is a savory chicken and rice dish that includes layers of chicken, rice, and aromatics that are steamed together. The bottom layer of rice absorbs all the chicken juices as it cooks, giving it a tender texture and rich flavor, while the top layer of rice turns out white and fluffy. Buried in the Biryani, you’ll find whole cuts of succulent chicken bursting with flavor from the potent array of spices, herbs, and aromatics it’s marinated in.",
+        "price":"300",
+        "delivery":"20",
+        "rating":"4.4"
+    },
+    {
+        "name":"Vegitable Curry",
+        "picture":"https://i.ibb.co/ZN7LPq2/vegitable-curry.jpg",
+        "description":"Curries have a reputation for being difficult to make, unless you have a helping hand from a jar of curry paste. So the nice thing about this one is that it’s “real” curry recipe that’s made using spices that are available at my local grocery store. The sauce for this curry is the same as used in the Chickpea Potato Curry (Channa Aloo Curry) my It’s a Caribbean curry from Trinidad, but it tastes very similar to Indian curries. If I didn’t know it was Caribbean, I would think it was an Indian one!",
+        "price":"50",
+        "delivery":"20",
+        "rating":"4.5"
+    },
+    {
+        "name":"Kacchi Biriany",
+        "picture":"https://i.ibb.co/jHNzFV1/kacchi-biriani.jpg",
+        "description":"Kacchi Mutton Biryani is a delicious rice dish where tender goat or lamb meat pieces are marinated with lots of fried onions, whole spices, fresh herbs and yoghurt. This marinated meat sits on the bottom of the pot topped with half-cooked rice which is drizzled with saffron-infused water and more fried onions and fresh mint leaves. Sealed and slow-cooked in an oven or on stove-top to a delicious aromatic finger-licking biryani that you may serve with some kachumber, salad, and if you are like us, more pappadoms",
+        "price":"400",
+        "delivery":"30",
+        "rating":"5"
+    }
+]
