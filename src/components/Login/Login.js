@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { getJWTToken } from "../../utilities/getToken";
 import { AuthContext } from "../Context/UserContext";
 
 const Login = () => {
@@ -18,12 +19,13 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        /* const currentUser = {
-        email: user.email,
-      }; */
+        const currentUser = {
+          email: user.email,
+        };
+        getJWTToken(currentUser);
         setError("");
         form.reset();
-        navigate(from, { replace: true });
+        /*  navigate(from, { replace: true }); */
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -64,6 +66,7 @@ const Login = () => {
                 placeholder="email"
                 name="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -75,6 +78,7 @@ const Login = () => {
                 placeholder="password"
                 name="password"
                 className="input input-bordered"
+                required
               />
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">

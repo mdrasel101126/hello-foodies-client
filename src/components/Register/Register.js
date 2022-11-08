@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
 
 const Register = () => {
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile, setProfileUpdate } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -35,6 +36,7 @@ const Register = () => {
     updateUserProfile(profile)
       .then(() => {
         // Profile updated!
+        setProfileUpdate(true);
         // ...
       })
       .catch((error) => {
@@ -64,6 +66,7 @@ const Register = () => {
                 placeholder="name"
                 name="name"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -86,6 +89,7 @@ const Register = () => {
                 placeholder="email"
                 name="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -97,6 +101,7 @@ const Register = () => {
                 placeholder="password"
                 name="password"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control mt-6">

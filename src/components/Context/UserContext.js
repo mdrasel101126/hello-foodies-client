@@ -18,6 +18,7 @@ const googleProvider = new GoogleAuthProvider();
 const UserContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [profileUpdate, setProfileUpdate] = useState(false);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -35,6 +36,8 @@ const UserContext = ({ children }) => {
   };
   const logOut = () => {
     setLoading(true);
+    localStorage.removeItem("helloFoodies-jwt");
+    setProfileUpdate(false);
     //localStorage.removeItem("genious-token");
     return signOut(auth);
   };
@@ -51,7 +54,7 @@ const UserContext = ({ children }) => {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [profileUpdate]);
 
   const authInfo = {
     user,
@@ -61,6 +64,7 @@ const UserContext = ({ children }) => {
     googleSignUp,
     logOut,
     updateUserProfile,
+    setProfileUpdate,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
