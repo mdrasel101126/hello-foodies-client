@@ -7,6 +7,7 @@ const MyReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   const handleReviewDelete = (id) => {
+    console.log(id);
     fetch(`http://localhost:5000/reviews/${id}`, {
       method: "DELETE",
     })
@@ -15,13 +16,27 @@ const MyReviews = () => {
         console.log(data);
       });
   };
+  const handleReviewUpdate = (id, newComment) => {
+    console.log(id);
+    fetch(`http://localhost:5000/reviews/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ newComment }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user.email}`)
+    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
       });
-  }, [user.email]);
+  }, [user?.email]);
   return (
     <div className="overflow-x-auto w-full">
       <table className="table w-full">
@@ -39,6 +54,7 @@ const MyReviews = () => {
               key={review._id}
               review={review}
               handleReviewDelete={handleReviewDelete}
+              handleReviewUpdate={handleReviewUpdate}
             ></ReviewItem>
           ))}
         </tbody>
