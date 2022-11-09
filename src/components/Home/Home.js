@@ -3,6 +3,9 @@ import { Link, useLoaderData } from "react-router-dom";
 import banner from "../../assets/Images/home-page-banner.jpg";
 import Service from "../Services/Service";
 import cook from "../../assets/Images/cook-person.jpg";
+import organic from "../../assets/Images/organic.png";
+import natural from "../../assets/Images/natural.png";
+import safety from "../../assets/Images/safety.png";
 
 const Home = () => {
   const services = useLoaderData();
@@ -47,6 +50,7 @@ const Home = () => {
           See All
         </Link>
       </div>
+      {/* hero section */}
       <div className="hero mt-8">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <img
@@ -62,6 +66,38 @@ const Home = () => {
               feedback by commenting .
             </p>
             <button className="btn btn-primary btn-sm">Get Started</button>
+          </div>
+        </div>
+      </div>
+      {/*another section */}
+      <div>
+        <h1 className="my-8 text-center text-blue-900 text-4xl font-semibold">
+          Ensuring To Provie
+        </h1>
+        <div className="flex flex-row justify-center flex-wrap">
+          <div className="shadow-xl m-8">
+            <div>
+              <img className="w-40 h-40 p-8" src={organic} alt="" />
+            </div>
+            <h1 className="text-center text-blue-900 font-semibold pb-6">
+              Organic Food
+            </h1>
+          </div>
+          <div className="shadow-xl m-8">
+            <div>
+              <img className="w-40 h-40 p-8" src={natural} alt="" />
+            </div>
+            <h1 className="text-center text-blue-900 font-semibold pb-6">
+              Natural Food
+            </h1>
+          </div>
+          <div className="shadow-xl m-8">
+            <div>
+              <img className="w-40 h-40 p-8" src={safety} alt="" />
+            </div>
+            <h1 className="text-center text-blue-900 font-semibold pb-6">
+              Safety
+            </h1>
           </div>
         </div>
       </div>

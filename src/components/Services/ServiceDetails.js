@@ -58,7 +58,7 @@ const ServiceDetails = () => {
   }, [_id, toogleReview]);
   return (
     <div>
-      <div className="w-full md:w-3/5 lg:w-1/2 bg-base-100 shadow-xl mt-8 p-8 mx-auto">
+      <div className="w-11/12  md:w-3/5 lg:w-1/2 bg-base-100 shadow-xl mt-8 p-8 mx-auto">
         <figure>
           <PhotoProvider>
             <PhotoView src={picture}>
@@ -86,21 +86,29 @@ const ServiceDetails = () => {
           </>
         </div>
       </div>
-      <div>
-        <form onSubmit={handleReviewSubmit} className="text-center">
-          <textarea
-            className="textarea textarea-bordered border-2 w-full sm:w-11/12 md:w-9/12 lg:w-1/2"
-            placeholder="Add Your Review"
-            name="review"
-            required
-          ></textarea>
-          <div>
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-        </form>
-      </div>
+      {user?.email ? (
+        <div className="w-3/4 sm:w-3/5 md:w-2/5 lg:w-1/5 mx-auto my-8">
+          <form onSubmit={handleReviewSubmit} className="text-center">
+            <textarea
+              className="textarea textarea-bordered border-2 w-full "
+              placeholder="Add Your Review"
+              name="review"
+              required
+            ></textarea>
+            <div>
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      ) : (
+        <div>
+          <h1 className="text-xl font-semibold text-red-900 my-8 text-center">
+            Please Login To Add Comment
+          </h1>
+        </div>
+      )}
       <div>
         {reviews.map((review) => (
           <ServiceReviews key={review._id} review={review}></ServiceReviews>
