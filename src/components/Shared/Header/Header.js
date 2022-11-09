@@ -2,34 +2,35 @@ import React, { useContext } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
+import logo from "../../../assets/Images/logo.svg";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const items = (
     <>
       <li>
-        <Link to="/" className="lg:text-white font-bold">
+        <Link to="/" className="lg:text-white font-bold ml-2">
           Home
         </Link>
       </li>
+      {user && (
+        <>
+          {" "}
+          <li>
+            <Link to="/myreviews" className="lg:text-white font-bold ml-2">
+              My Reviews
+            </Link>
+          </li>
+          <li>
+            <Link to="/addservice" className="lg:text-white font-bold ml-2">
+              Add Service
+            </Link>
+          </li>
+        </>
+      )}
       <li>
-        <Link to="/myreviews" className="lg:text-white font-bold ">
-          My Reviews
-        </Link>
-      </li>
-      <li>
-        <Link to="/blogs" className="lg:text-white font-bold ">
+        <Link to="/blogs" className="lg:text-white font-bold ml-2">
           Blog
-        </Link>
-      </li>
-      <li>
-        <Link to="/addservice" className="lg:text-white font-bold">
-          Add Service
-        </Link>
-      </li>
-      <li>
-        <Link to="/register" className="lg:text-white font-bold">
-          Register
         </Link>
       </li>
     </>
@@ -71,23 +72,25 @@ const Header = () => {
             {items}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case text-xl text-white">
-          HelloFoodies
-        </Link>
+        <div className="flex flex-row items-center">
+          <Link to="/">
+            <img className="w-14 h-14" src={logo} alt="" />
+          </Link>
+          <Link to="/" className="normal-case text-2xl text-white">
+            HelloFoodies
+          </Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{items}</ul>
       </div>
       <div className="navbar-end">
-        {" "}
-        {/* <div className="tooltip" data-tip="hello">
-  <button className="btn">Hover me</button>
-</div> */}
         {user?.uid ? (
           <>
             {user.photoURL ? (
               <div className="tooltip tooltip-left" data-tip={user.displayName}>
                 <img
+                  className="mr-2"
                   style={{ height: "40px", width: "40px", borderRadius: "50%" }}
                   src={user.photoURL}
                   alt=""
@@ -95,15 +98,15 @@ const Header = () => {
               </div>
             ) : (
               <div className="tooltip tooltip-left" data-tip={user.displayName}>
-                <FaUserAlt className="w-10 h-10 text-white"></FaUserAlt>
+                <FaUserAlt className="w-10 h-10 text-white mr-2"></FaUserAlt>
               </div>
             )}
-            <button onClick={handleLogOut} className="btn btn-primary">
+            <button onClick={handleLogOut} className="btn btn-primary mr-8">
               Log Out
             </button>
           </>
         ) : (
-          <Link to="/login" className="text-white font-bold lg:mr-8">
+          <Link to="/login" className="text-white font-bold mr-8">
             Login
           </Link>
         )}

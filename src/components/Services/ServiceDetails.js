@@ -110,9 +110,14 @@ const ServiceDetails = () => {
         </div>
       )}
       <div>
-        {reviews.map((review) => (
-          <ServiceReviews key={review._id} review={review}></ServiceReviews>
-        ))}
+        <p className="w-11/12 sm:w-11/12 md:w-7/12 lg:w-1/2 mx-auto">
+          All Comments
+        </p>
+        <div>
+          {reviews.map((review) => (
+            <ServiceReviews key={review._id} review={review}></ServiceReviews>
+          ))}
+        </div>
       </div>
     </div>
   );

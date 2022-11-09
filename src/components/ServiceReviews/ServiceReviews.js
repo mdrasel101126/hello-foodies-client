@@ -3,9 +3,9 @@ import { FaUserAlt } from "react-icons/fa";
 
 const ServiceReviews = ({ review }) => {
   //console.log(id);
-  const { name, photoURL, comment, comment_date, email, service_name } = review;
+  const { name, photoURL, comment } = review;
   return (
-    <div className="border-2 rounded-xl mt-6 w-full sm:w-11/12 md:w-7/12 lg:w-1/2 mx-auto">
+    <div className="border-2 rounded-xl mt-6 w-11/12 sm:w-11/12 md:w-7/12 lg:w-1/2 mx-auto shadow-xl bg-white p-4">
       <div className="flex flex-row items-center">
         {photoURL ? (
           <img
@@ -16,11 +16,9 @@ const ServiceReviews = ({ review }) => {
         ) : (
           <FaUserAlt></FaUserAlt>
         )}
-        <p>{name}</p>
+        <p className="ml-2">{name}</p>
       </div>
       <p>{comment}</p>
-      <p>{service_name}</p>
-      <p>Comment Date: {comment_date}</p>
     </div>
   );
 };
