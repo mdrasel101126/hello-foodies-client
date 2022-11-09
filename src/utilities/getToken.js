@@ -11,7 +11,7 @@ export async function getJWTToken(user) {
     });
     const data = await res.json();
     //console.log(data);
-    localStorage.setItem("helloFoodies-jwt", JSON.stringify(data.token));
+    localStorage.setItem("helloFoodies-jwt", data.token);
   } catch (e) {
     console.log(e);
   }

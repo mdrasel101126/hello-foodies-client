@@ -3,7 +3,7 @@ import { AuthContext } from "../Context/UserContext";
 import ReviewItem from "./ReviewItem";
 
 const MyReviews = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
 
   const handleReviewDelete = (id) => {
@@ -31,12 +31,21 @@ const MyReviews = () => {
       });
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("helloFoodies-jwt")}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return logOut();
+        }
+        return res.json();
+      })
       .then((data) => {
         setReviews(data);
       });
-  }, [user?.email]);
+  }, [user?.email, logOut]);
   return (
     <div className="overflow-x-auto w-full">
       <table className="table w-full">

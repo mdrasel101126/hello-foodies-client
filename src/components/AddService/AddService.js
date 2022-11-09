@@ -30,6 +30,12 @@ const AddService = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.acknowledged) {
+          alert("Added Successfully");
+          form.reset();
+        } else {
+          alert("soory");
+        }
       });
   };
   return (
@@ -93,18 +99,6 @@ const AddService = () => {
           className="input input-bordered"
         />
       </div>
-      {/*  <div className="form-control">
-        <label className="label">
-          <span className="label-text">Rating</span>
-        </label>
-        <input
-          type="text"
-          placeholder="Enter Rating"
-          name="rating"
-          required
-          className="input input-bordered"
-        />
-      </div> */}
       <div>
         <p>
           Rating:
