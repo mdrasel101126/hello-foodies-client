@@ -79,17 +79,24 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{items}</ul>
       </div>
       <div className="navbar-end">
-        {/*  <a className="btn">Get started</a> */}
+        {" "}
+        {/* <div className="tooltip" data-tip="hello">
+  <button className="btn">Hover me</button>
+</div> */}
         {user?.uid ? (
           <>
             {user.photoURL ? (
-              <img
-                style={{ height: "40px", width: "40px", borderRadius: "50%" }}
-                src={user.photoURL}
-                alt=""
-              />
+              <div className="tooltip tooltip-left" data-tip={user.displayName}>
+                <img
+                  style={{ height: "40px", width: "40px", borderRadius: "50%" }}
+                  src={user.photoURL}
+                  alt=""
+                />
+              </div>
             ) : (
-              <FaUserAlt className="w-10 h-10 text-white"></FaUserAlt>
+              <div className="tooltip tooltip-left" data-tip={user.displayName}>
+                <FaUserAlt className="w-10 h-10 text-white"></FaUserAlt>
+              </div>
             )}
             <button onClick={handleLogOut} className="btn btn-primary">
               Log Out
