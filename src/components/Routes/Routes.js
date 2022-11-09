@@ -1,3 +1,4 @@
+import AddService from "../AddService/AddService";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import MyReviews from "../MyReviews/MyReviews";
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
       {
         path: "/myreviews",
         element: <MyReviews></MyReviews>,
+      },
+      {
+        path: "/addservice",
+        element: <AddService></AddService>,
       },
     ],
   },
