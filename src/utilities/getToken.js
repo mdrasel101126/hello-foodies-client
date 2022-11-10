@@ -1,5 +1,3 @@
-import { json } from "react-router-dom";
-
 export async function getJWTToken(user) {
   try {
     const res = await fetch("http://localhost:5000/jwt", {

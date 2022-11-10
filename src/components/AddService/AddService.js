@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 
 const AddService = () => {
   const handleAddService = (event) => {
@@ -31,15 +32,18 @@ const AddService = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("Added Successfully");
+          toast.success("Successfully Added The Service");
           form.reset();
         } else {
-          alert("soory");
+          toast.error("Sorry!! Something Went Wrong!!");
         }
       });
   };
   return (
-    <form onSubmit={handleAddService} className="card-body">
+    <form
+      onSubmit={handleAddService}
+      className="card-body w-11/12 sm:w-4/5 md:w-3/5 lg:w-1/2 mx-auto"
+    >
       <div className="form-control">
         <label className="label">
           <span className="label-text">Service Name</span>
