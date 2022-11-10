@@ -29,7 +29,7 @@ const ServiceDetails = () => {
       service_name: name,
       comment_date: new Date(),
     };
-    console.log(serviceReview);
+    //console.log(serviceReview);
     fetch("https://hello-foodies-server.vercel.app/reviews", {
       method: "POST",
       headers: {
@@ -39,7 +39,8 @@ const ServiceDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
+        form.reset();
 
         setToogleReview(!toogleReview);
       })

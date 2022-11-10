@@ -10,7 +10,7 @@ const MyReviews = () => {
   const [isModified, setIsModified] = useState(false);
   useTitle("My Reviews");
   const handleReviewDelete = (id) => {
-    console.log(id);
+    //console.log(id);
     fetch(`https://hello-foodies-server.vercel.app/reviews/${id}`, {
       method: "DELETE",
     })
@@ -24,7 +24,7 @@ const MyReviews = () => {
       });
   };
   const handleReviewUpdate = (id, newComment) => {
-    console.log(id);
+    //console.log(id);
     fetch(`https://hello-foodies-server.vercel.app/reviews/${id}`, {
       method: "PATCH",
       headers: {
@@ -34,7 +34,7 @@ const MyReviews = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.deletedCount) {
+        if (data.modifiedCount) {
           setIsModified(!isModified);
           toast.success("Updated Successfully");
         }

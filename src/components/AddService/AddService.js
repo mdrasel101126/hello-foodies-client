@@ -15,7 +15,7 @@ const AddService = () => {
     const price = form.price.value;
     const delivery = form.delivery.value;
     const rating = form.rating.value;
-    console.log(name, picture, description, price, delivery, rating);
+    //console.log(name, picture, description, price, delivery, rating);
     const service = {
       name,
       picture,
@@ -34,7 +34,7 @@ const AddService = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           setIsAddService(!isAddService);
           toast.success("Successfully Added The Service");
