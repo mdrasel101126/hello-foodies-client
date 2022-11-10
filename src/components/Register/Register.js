@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
+import registerImg from "../../assets/Images/register.svg";
 
 const Register = () => {
   const { createUser, updateUserProfile, setProfileUpdate } =
@@ -45,17 +46,12 @@ const Register = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+    <div className="w-11/12 mt-8 mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="flex flex-row justify-center items-center">
+          <img className="w-full md:w-4/5 lg:3/5" src={registerImg} alt="" />
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card  shadow-2xl  w-full md:w-3/5 lg:w-4/5 mx-auto">
           <form onSubmit={handleFormSubmit} className="card-body">
             <div className="form-control">
               <label className="label">

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getJWTToken } from "../../utilities/getToken";
 import { AuthContext } from "../Context/UserContext";
+import loginImg from "../../assets/Images/Login-pana.svg";
 
 const Login = () => {
   const { loginUser, googleSignUp } = useContext(AuthContext);
@@ -45,17 +46,13 @@ const Login = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+    <div className="w-11/12 mt-8 mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="flex flex-row justify-center items-center">
+          <img className="w-full md:w-4/5 lg:3/5" src={loginImg} alt="" />
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+
+        <div className="card  shadow-2xl  w-full md:w-3/5 lg:w-4/5 mx-auto">
           <form onSubmit={handleLoginFormSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -81,9 +78,9 @@ const Login = () => {
                 required
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <Link href="#" className="label-text-alt link link-hover">
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             <div className="form-control mt-6">
@@ -106,14 +103,16 @@ const Login = () => {
                 </p>
                 <hr className="w-1/2 h-0.5 bg-slate-600" />
               </div>
-              <button
-                onClick={handleGoogleSignUp}
-                className="btn bg-slate-600 mt-6 text-white"
-              >
-                Sign in With Google
-              </button>
             </div>
           </form>
+          <div className="mb-8 text-center">
+            <button
+              onClick={handleGoogleSignUp}
+              className="btn bg-slate-600 text-white"
+            >
+              Sign in With Google
+            </button>
+          </div>
         </div>
       </div>
     </div>
