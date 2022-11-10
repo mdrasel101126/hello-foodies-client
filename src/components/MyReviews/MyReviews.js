@@ -61,27 +61,37 @@ const MyReviews = () => {
       });
   }, [user?.email, logOut, isModified]);
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="table w-full">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Food Name</th>
-            <th>My Reviw</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {reviews.map((review) => (
-            <ReviewItem
-              key={review._id}
-              review={review}
-              handleReviewDelete={handleReviewDelete}
-              handleReviewUpdate={handleReviewUpdate}
-            ></ReviewItem>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      {reviews.length > 0 ? (
+        <div className="overflow-x-auto w-full">
+          <table className="table w-full">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Food Name</th>
+                <th>My Reviw</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {reviews.map((review) => (
+                <ReviewItem
+                  key={review._id}
+                  review={review}
+                  handleReviewDelete={handleReviewDelete}
+                  handleReviewUpdate={handleReviewUpdate}
+                ></ReviewItem>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div style={{ marginTop: "40vh" }}>
+          <h1 className="text-center text-4xl font-semibold text-blue-900">
+            No reviews were added
+          </h1>
+        </div>
+      )}
     </div>
   );
 };
