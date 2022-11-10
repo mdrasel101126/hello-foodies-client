@@ -1,4 +1,5 @@
 import AddService from "../AddService/AddService";
+import Blogs from "../Blogs/Blogs";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import MyReviews from "../MyReviews/MyReviews";
@@ -52,6 +53,10 @@ const routes = createBrowserRouter([
             <AddService></AddService>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
     ],
   },

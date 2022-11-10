@@ -14,20 +14,24 @@ const Header = () => {
         </Link>
       </li>
 
-      <li>
-        <Link to="/myreviews" className="lg:text-white font-bold ml-2">
-          My Reviews
-        </Link>
-      </li>
-      <li>
-        <Link to="/addservice" className="lg:text-white font-bold ml-2">
-          Add Service
-        </Link>
-      </li>
+      {user?.uid && (
+        <>
+          <li>
+            <Link to="/myreviews" className="lg:text-white font-bold ml-2">
+              My Reviews
+            </Link>
+          </li>
+          <li>
+            <Link to="/addservice" className="lg:text-white font-bold ml-2">
+              Add Service
+            </Link>
+          </li>
+        </>
+      )}
 
       <li>
         <Link to="/blogs" className="lg:text-white font-bold ml-2">
-          Blog
+          Blogs
         </Link>
       </li>
     </>
