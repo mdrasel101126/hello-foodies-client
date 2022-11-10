@@ -33,10 +33,12 @@ const Home = () => {
           alt=""
         />
         <div className="absolute transform -translate-y-1/2 w-1/2 top-1/2 left-8">
-          <h1 className="text-5xl font-bold text-blue-900">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-blue-900">
             Wellcome To My Kitchen
           </h1>
-          <h1 className="text-5xl font-bold text-blue-900">Hello Foodies</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-blue-900">
+            Hello Foodies
+          </h1>
           <p className="font-semibold pt-6 text-blue-900">
             You can buy delicious home made food here.These foods are totally
             hygienic for health

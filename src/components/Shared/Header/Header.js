@@ -75,9 +75,9 @@ const Header = () => {
         </div>
         <div className="flex flex-row items-center">
           <Link to="/">
-            <img className="w-14 h-14" src={logo} alt="" />
+            <img className="w-14 h-14 hidden md:block" src={logo} alt="" />
           </Link>
-          <Link to="/" className="normal-case text-2xl text-white">
+          <Link to="/" className="normal-case text-xl md:text-2xl text-white">
             HelloFoodies
           </Link>
         </div>
