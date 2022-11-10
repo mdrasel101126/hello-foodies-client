@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../Context/UserContext";
@@ -25,7 +25,7 @@ const AddService = () => {
       rating,
       publishedDate: new Date(),
     };
-    fetch("http://localhost:5000/services", {
+    fetch("https://hello-foodies.web.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

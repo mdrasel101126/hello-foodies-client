@@ -1,6 +1,6 @@
 export async function getJWTToken(user) {
   try {
-    const res = await fetch("http://localhost:5000/jwt", {
+    const res = await fetch("https://hello-foodies.web.app/jwt", {
       method: "POST",
       headers: {
         "content-type": "application/json",

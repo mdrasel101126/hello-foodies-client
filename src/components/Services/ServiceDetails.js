@@ -30,7 +30,7 @@ const ServiceDetails = () => {
       comment_date: new Date(),
     };
     console.log(serviceReview);
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://hello-foodies.web.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -48,7 +48,7 @@ const ServiceDetails = () => {
       });
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?id=${_id}`)
+    fetch(`https://hello-foodies.web.app/reviews?id=${_id}`)
       .then((res) => res.json())
       .then((data) => {
         //console.log(data);

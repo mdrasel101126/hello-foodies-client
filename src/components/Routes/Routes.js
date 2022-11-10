@@ -28,7 +28,7 @@ const routes = createBrowserRouter([
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://hello-foodies.web.app/services/${params.id}`),
       },
       {
         path: "/register",
