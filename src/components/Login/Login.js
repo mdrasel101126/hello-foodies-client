@@ -19,14 +19,14 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        //console.log(user);
         const currentUser = {
           email: user.email,
         };
         getJWTToken(currentUser);
         setError("");
         form.reset();
-        /*  navigate(from, { replace: true }); */
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -37,8 +37,13 @@ const Login = () => {
     googleSignUp()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
+        const currentUser = {
+          email: user.email,
+        };
+        getJWTToken(currentUser);
         setError("");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -49,10 +54,14 @@ const Login = () => {
     <div className="w-11/12 mt-8 mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-row justify-center items-center">
-          <img className="w-full md:w-4/5 lg:3/5" src={loginImg} alt="" />
+          <img
+            className="w-full sm:w-4/5 md:w-3/5 lg:w-3/5"
+            src={loginImg}
+            alt=""
+          />
         </div>
 
-        <div className="card  shadow-2xl  w-full md:w-3/5 lg:w-4/5 mx-auto">
+        <div className="card  shadow-2xl  w-full sm:w-4/5 md:w-3/5 lg:w-3/5 mx-auto">
           <form onSubmit={handleLoginFormSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -83,6 +92,7 @@ const Login = () => {
                 </Link>
               </label>
             </div>
+            {error && <p className="text-red-700">{error}</p>}
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-primary">
                 Login

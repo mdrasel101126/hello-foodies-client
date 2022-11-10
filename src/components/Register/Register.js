@@ -49,9 +49,13 @@ const Register = () => {
     <div className="w-11/12 mt-8 mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-row justify-center items-center">
-          <img className="w-full md:w-4/5 lg:3/5" src={registerImg} alt="" />
+          <img
+            className="w-ful sm:w-4/5 md:w-3/5 lg:w-3/5"
+            src={registerImg}
+            alt=""
+          />
         </div>
-        <div className="card  shadow-2xl  w-full md:w-3/5 lg:w-4/5 mx-auto">
+        <div className="card  shadow-2xl  w-full sm:w-4/5 md:w-3/5  lg:w-3/5 mx-auto">
           <form onSubmit={handleFormSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -100,6 +104,7 @@ const Register = () => {
                 required
               />
             </div>
+            {error && <p className="text-red-700">{error}</p>}
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-primary">
                 Register

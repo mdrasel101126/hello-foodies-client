@@ -5,6 +5,7 @@ import MyReviews from "../MyReviews/MyReviews";
 import Register from "../Register/Register";
 import ServiceDetails from "../Services/ServiceDetails";
 import Services from "../Services/Services";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
@@ -40,7 +41,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/myreviews",
-        element: <MyReviews></MyReviews>,
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addservice",
