@@ -3,9 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { getJWTToken } from "../../utilities/getToken";
 import { AuthContext } from "../Context/UserContext";
 import loginImg from "../../assets/Images/Login-pana.svg";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const { loginUser, googleSignUp } = useContext(AuthContext);
+  useTitle("Login");
   const [error, setError] = useState("");
   const location = useLocation();
   const [buffer, setBuffer] = useState(false);

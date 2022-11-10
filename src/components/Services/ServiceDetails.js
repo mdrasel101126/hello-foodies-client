@@ -5,10 +5,12 @@ import "react-photo-view/dist/react-photo-view.css";
 import { FaStar } from "react-icons/fa";
 import ServiceReviews from "../ServiceReviews/ServiceReviews";
 import { AuthContext } from "../Context/UserContext";
+import useTitle from "../../hooks/useTitle";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
   //console.log(service);
+  useTitle("Service Details");
   const { _id, name, delivery, description, picture, price, rating } = service;
   const [reviews, setReviews] = useState([]);
   const [toogleReview, setToogleReview] = useState(false);

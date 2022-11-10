@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../Context/UserContext";
 import Service from "./Service";
 
@@ -6,6 +7,7 @@ const Services = () => {
   const [services, setServices] = useState([]);
   const { isAddService } = useContext(AuthContext);
   const [buffer, setBuffer] = useState(true);
+  useTitle("Services");
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((res) => res.json())

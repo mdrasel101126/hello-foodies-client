@@ -3,10 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/UserContext";
 import registerImg from "../../assets/Images/register.svg";
 import { getJWTToken } from "../../utilities/getToken";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const { createUser, updateUserProfile, setProfileUpdate } =
     useContext(AuthContext);
+  useTitle("Register");
   const [error, setError] = useState("");
   const [buffer, setBuffer] = useState(false);
   const navigate = useNavigate();

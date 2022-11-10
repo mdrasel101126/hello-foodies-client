@@ -7,11 +7,13 @@ import organic from "../../assets/Images/organic.png";
 import natural from "../../assets/Images/natural.png";
 import safety from "../../assets/Images/safety.png";
 import { AuthContext } from "../Context/UserContext";
+import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
   const [services, setServices] = useState([]);
   const [buffer, setBuffer] = useState(true);
   const { isAddService } = useContext(AuthContext);
+  useTitle("Home");
   useEffect(() => {
     fetch("http://localhost:5000/services?amount=3")
       .then((res) => res.json())

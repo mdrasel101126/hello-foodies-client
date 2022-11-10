@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 import { AuthContext } from "../Context/UserContext";
 
 const AddService = () => {
   const { isAddService, setIsAddService } = useContext(AuthContext);
+  useTitle("Add Service");
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
