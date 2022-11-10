@@ -19,6 +19,7 @@ const UserContext = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [profileUpdate, setProfileUpdate] = useState(false);
+  const [isAddService, setIsAddService] = useState(false);
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -65,6 +66,8 @@ const UserContext = ({ children }) => {
     logOut,
     updateUserProfile,
     setProfileUpdate,
+    isAddService,
+    setIsAddService,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

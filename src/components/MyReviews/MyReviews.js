@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/UserContext";
 import ReviewItem from "./ReviewItem";
+import toast from "react-hot-toast";
 
 const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
+  const [isModified, setIsModified] = useState(false);
 
   const handleReviewDelete = (id) => {
     console.log(id);
@@ -13,7 +15,11 @@ const MyReviews = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.deletedCount) {
+          setIsModified(!isModified);
+          toast.success("Deleted Successfully");
+        }
+        //console.log(data);
       });
   };
   const handleReviewUpdate = (id, newComment) => {
@@ -27,7 +33,11 @@ const MyReviews = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.deletedCount) {
+          setIsModified(!isModified);
+          toast.success("Updated Successfully");
+        }
+        //console.log(data);
       });
   };
   useEffect(() => {
@@ -45,7 +55,7 @@ const MyReviews = () => {
       .then((data) => {
         setReviews(data);
       });
-  }, [user?.email, logOut]);
+  }, [user?.email, logOut, isModified]);
   return (
     <div className="overflow-x-auto w-full">
       <table className="table w-full">

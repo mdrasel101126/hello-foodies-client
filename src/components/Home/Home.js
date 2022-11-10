@@ -1,17 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import banner from "../../assets/Images/home-page-banner.jpg";
 import Service from "../Services/Service";
 import cook from "../../assets/Images/cook-person.jpg";
 import organic from "../../assets/Images/organic.png";
 import natural from "../../assets/Images/natural.png";
 import safety from "../../assets/Images/safety.png";
+import { AuthContext } from "../Context/UserContext";
 
 const Home = () => {
-  const services = useLoaderData();
-  if (!services) {
-    return <h1>No Data Found</h1>;
-  }
+  const [services, setServices] = useState([]);
+  const [buffer, setBuffer] = useState(true);
+  const { isAddService } = useContext(AuthContext);
+  useEffect(() => {
+    fetch("http://localhost:5000/services?amount=3")
+      .then((res) => res.json())
+      .then((data) => {
+        setServices(data);
+        setBuffer(false);
+      });
+  }, [isAddService]);
+
   return (
     <div>
       <div className="relative ">
@@ -39,11 +48,17 @@ const Home = () => {
         <p className="text-center font-semibold text-gray-600  mb-6">
           Eat Healthy ,Keep Healthy
         </p>
-        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <Service key={service._id} service={service}></Service>
-          ))}
-        </div>
+        {!buffer ? (
+          <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <Service key={service._id} service={service}></Service>
+            ))}
+          </div>
+        ) : (
+          <div className="w-full mt-14">
+            <div className="loader mx-auto"></div>
+          </div>
+        )}
       </div>
       <div className="text-center my-8">
         <Link to="/services" className="btn btn-primary  w-32 font-semibold">

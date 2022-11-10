@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../Context/UserContext";
 
 const AddService = () => {
+  const { isAddService, setIsAddService } = useContext(AuthContext);
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -32,6 +34,7 @@ const AddService = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
+          setIsAddService(!isAddService);
           toast.success("Successfully Added The Service");
           form.reset();
         } else {
