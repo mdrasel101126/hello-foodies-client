@@ -15,7 +15,7 @@ const Home = () => {
   const { isAddService } = useContext(AuthContext);
   useTitle("Home");
   useEffect(() => {
-    fetch("https://hello-foodies.web.app/services?amount=3")
+    fetch("https://hello-foodies-server.vercel.app/services?amount=3")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

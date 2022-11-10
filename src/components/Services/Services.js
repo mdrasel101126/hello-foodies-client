@@ -9,7 +9,7 @@ const Services = () => {
   const [buffer, setBuffer] = useState(true);
   useTitle("Services");
   useEffect(() => {
-    fetch("https://hello-foodies.web.app/services")
+    fetch("https://hello-foodies-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

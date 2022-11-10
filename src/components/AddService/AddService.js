@@ -25,7 +25,7 @@ const AddService = () => {
       rating,
       publishedDate: new Date(),
     };
-    fetch("https://hello-foodies.web.app/services", {
+    fetch("https://hello-foodies-server.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",

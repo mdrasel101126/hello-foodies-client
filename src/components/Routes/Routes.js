@@ -28,7 +28,9 @@ const routes = createBrowserRouter([
         path: "/services/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`https://hello-foodies.web.app/services/${params.id}`),
+          fetch(
+            `https://hello-foodies-server.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/register",

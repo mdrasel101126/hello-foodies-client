@@ -11,7 +11,7 @@ const MyReviews = () => {
   useTitle("My Reviews");
   const handleReviewDelete = (id) => {
     console.log(id);
-    fetch(`https://hello-foodies.web.app/reviews/${id}`, {
+    fetch(`https://hello-foodies-server.vercel.app/reviews/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -25,7 +25,7 @@ const MyReviews = () => {
   };
   const handleReviewUpdate = (id, newComment) => {
     console.log(id);
-    fetch(`https://hello-foodies.web.app/reviews/${id}`, {
+    fetch(`https://hello-foodies-server.vercel.app/reviews/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -42,11 +42,14 @@ const MyReviews = () => {
       });
   };
   useEffect(() => {
-    fetch(`https://hello-foodies.web.app/myreviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("helloFoodies-jwt")}`,
-      },
-    })
+    fetch(
+      `https://hello-foodies-server.vercel.app/myreviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("helloFoodies-jwt")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logOut();
